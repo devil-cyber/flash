@@ -92,6 +92,6 @@ class Flash:
     def __call__(self, environ, start_response):
         path_info = environ['PATH_INFO']
         if request_for_static(path_info,self._static_root):
-            environ['PATH_INFO'] = cut_static_root(path_info., self._static_root)
+            environ['PATH_INFO'] = cut_static_root(path_info, self._static_root)
             return self.as_whitenoise_app(environ,start_response)
         return self._middleware(environ,start_response)
