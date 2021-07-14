@@ -1,7 +1,9 @@
-from Flash import Flash
+from flash import Flash
 
 app = Flash()
 
 @app.route("/home")
-def home(resp,req):
+def home(req,resp):
+    print('Manikant')
+    print(resp)
     resp.text = "Hello world!"

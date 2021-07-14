@@ -1,4 +1,4 @@
-from Flash.requests import Request
+from flash.requests import Request
 
 
 class Middleware:
