@@ -5,9 +5,10 @@ from requests import Session as RequestsSession
 from .exceptions import HttpError
 from .route import Route
 from .responses import Response
-from .util import empty_wsgi_app
+from .util import empty_wsgi_app,cut_static_root,request_for_static
 from .error_handlers import debug_exception_handler
 from .templates import get_templates_env
+from .middleware import Middleware
 
 
 class Flash:
@@ -21,10 +22,13 @@ class Flash:
 
         # Cached request session
         self._session = None
+        self._middleware = Middleware(self)
 
     @property
     def debug(self):
         return self._debug
+    def add_middleware(self,middleware_cls,**kwargs):
+        self._middleware.add(middleware_cls,**kwargs)
 
     def route(self, pattern, methods=None):
         """Decorater that add new route"""
@@ -50,36 +54,44 @@ class Flash:
             if self._debug is False:
                 raise exception
             debug_exception_handler(request, response, exception)
-    def template(self,name,context=None):
+
+    def template(self, name, context=None):
         if context is None:
             context = {}
         return self.templates.get_template(name).render(**context)
-    def dispatch_request(self,request):
+
+    def dispatch_request(self, request):
         response = Response()
         route, kwargs = self.find_route(path=request.path)
         try:
             if route is None:
-               raise HttpError(status=400)
-            route.handle_request(request,response,**kwargs)
+                raise HttpError(status=400)
+            route.handle_request(request, response, **kwargs)
         except Exception as e:
-            self._handle_exception(request,response,e)
+            self._handle_exception(request, response, e)
         return response
-    def find_route(self,path):
-        for pattern,route in self._routes.items():
-            matched,kwargs = route.match(request_path=path)
+
+    def find_route(self, path):
+        for pattern, route in self._routes.items():
+            matched, kwargs = route.match(request_path=path)
             if matched is True:
                 return route, kwargs
         return None, {}
-    def session(self,base_url="http://testserver"):
+
+    def session(self, base_url="http://testserver"):
         """Cached Testing HTTP client based on Requests"""
         if self._session is None:
             session = RequestsSession()
-            session.mount(base_url,RequestsWSGIAdapter(self))
+            session.mount(base_url, RequestsWSGIAdapter(self))
             self._session = session
         return self._session
-    def as_whitenoise_app(self,environ,start_response):
-        white_noise = WhiteNoise(empty_wsgi_app(),root = self.static_dir)
-        return white_noise(environ,start_response)
 
-
-
+    def as_whitenoise_app(self, environ, start_response):
+        white_noise = WhiteNoise(empty_wsgi_app(), root=self.static_dir)
+        return white_noise(environ, start_response)
+    def __call__(self, environ, start_response):
+        path_info = environ['PATH_INFO']
+        if request_for_static(path_info,self._static_root):
+            environ['PATH_INFO'] = cut_static_root(path_info., self._static_root)
+            return self.as_whitenoise_app(environ,start_response)
+        return self._middleware(environ,start_response)
