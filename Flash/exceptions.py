@@ -1,7 +1,7 @@
 from http import HTTPStatus
 
 
-class HttpError(Exception):
+class HTTPError(Exception):
     def __init__(self, status: int):
         assert isinstance(status, int), "Status should be an integer"
         self.__http_status = HTTPStatus(status)
