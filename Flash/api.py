@@ -54,4 +54,21 @@ class Flash:
         if context is None:
             context = {}
         return self.templates.get_template(name).render(**context)
+    def dispatch_request(self,request):
+        response = Response()
+        route, kwargs = self.find_route(path=request.path)
+        try:
+            if route is None:
+               raise HttpError(status=400)
+            route.handle_request(request,response,**kwargs)
+        except Exception as e:
+            self._handle_exception(request,response,e)
+        return response
+    def find_route(self,path):
+        for pattern,route in self._routes.items():
+            matched,kwargs = route.match(request_path=path)
+            if matched is True:
+                return route, kwargs
+        return None, {}
+
 
