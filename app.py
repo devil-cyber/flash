@@ -1,5 +1,4 @@
 from flash import Flash
-import json
 
 app = Flash(debug=True)
 
@@ -9,7 +8,7 @@ def home(req,resp):
     # print('manikant',req)
     # resp.html = app.template("test.html", context={"title": "Flash Framework", "body": "welcome to the new framework"})
     resp.json = data
-    print(req.body)
+    print(req)
     # print(req.request)
     if req.method=="POST":
         print('POST request',req.POST['manikant'])

@@ -11,7 +11,7 @@ DESCRIPTION = "Python Web Framework built for learning and fun."
 URL = "https://github.com/devil-cyber/flash"
 EMAIL = "mani2474695@gmail.com"
 AUTHOR = "Manikant Kumar"
-REQUIRES_PYTHON = ">=3.8.0"
+REQUIRES_PYTHON = ">=3.6.9"
 VERSION = "1.0.0"
 
 # What packages are required for this module to be executed?
@@ -62,7 +62,7 @@ class UploadCommand(Command):
     """Support setup.py upload."""
 
     description = "Build and publish the package."
-    user_options = []
+    user_options = ['devil360']
 
     @staticmethod
     def status(s):
