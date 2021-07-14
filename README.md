@@ -11,7 +11,10 @@ Install it:
 
 ```bash
 pip install flash-framework
+<<<<<<< HEAD
 
+=======
+>>>>>>> bbf77ae089eb58f93ea0a5f3e3813ed1cada41b6
 ```
 
 Basic Usage:
