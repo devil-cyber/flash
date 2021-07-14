@@ -6,6 +6,7 @@ from .exceptions import HttpError
 from .route import Route
 from .responses import Response
 from .util import empty_wsgi_app
+from .error_handlers import debug_exception_handler
 
 class Flash:
     def __init__(self, template_dir="templates",static_dir="static",debug=True):
@@ -38,5 +39,6 @@ class Flash:
         else:
             if self._debug is False:
                 raise exception
+            debug_exception_handler(request,response,exception)
 
 
