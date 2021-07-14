@@ -70,5 +70,11 @@ class Flash:
             if matched is True:
                 return route, kwargs
         return None, {}
-
+    def session(self,base_url="http://testserver"):
+        """Cached Testing HTTP client based on Requests"""
+        if self._session is None:
+            session = RequestsSession()
+            session.mount(base_url,RequestsWSGIAdapter(self))
+            self._session = session
+        return self._session
 
