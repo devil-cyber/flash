@@ -2,9 +2,199 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>{{title}}</title>
+  <link href="/static/test.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-$END$
+  <!-- ======== HEADER ======== -->
+  <header id="header">
+    <div class="logo"><a href="#"><i class="bx bx-bone"></i></a></div>
+    <nav class="navbar">
+      <ul class="nav__items">
+        <li class="nav__item"><a href="#home">HOME</a></li>
+        <li class="nav__item"><a href="#services">SERVICES</a></li>
+        <li class="nav__item"><a href="#about">ABOUT</a></li>
+        <li class="nav__item"><a href="#testimonials">TESTIMONY</a></li>
+        <div class="nav__item themecolor" title="change theme">
+          <i class='bx bxs-sun' title="light mode"></i>
+          <i class='bx bxs-moon' title="dark  mode"></i>
+        </div>
+      </ul>
+    </nav>
+    <div class="open_close_menu__container">
+      <i class="bx bx-menu"></i>
+      <i class="bx bx-x"></i>
+    </div>
+  </header>
+  <!-- ======== MAIN ======== -->
+  <main>
+    <!-- SECTION 1 -->
+    <section id="home" class="section_0 container">
+      <div class="section_1">
+        <div class="home_slogan">
+          <h1 class="company_name title">DOG GUARD CENTER</h1>
+          <div class="slogan_text text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, neque. Eaque optio impedit quia porro.</div>
+        </div>
+        <div class="home__image_mobile">
+          <img class="img_home" srcset="https://github.com/r-e-d-ant/DOG-guard-website/blob/main/assets/images/dog_mobile_pink.png?raw=true 600w, https://github.com/r-e-d-ant/DOG-guard-website/blob/main/assets/images/dog_image_in_blob.png?raw=true 1000w" sizes="(max-width: 768px) 600px, 1000px" src="https://github.com/r-e-d-ant/DOG-guard-website/blob/main/assets/images/dog_mobile_pink.png?raw=true" alt="">
+        </div>
+      </div>
+
+      <div class="bones">
+        <i class="fas fa-bone bone1"></i>
+        <i class="fas fa-bone bone2"></i>
+        <i class="fas fa-bone bone3"></i>
+        <i class="fas fa-bone bone4"></i>
+      </div>
+      <div class="paws">
+        <i class="fas fa-paw paw1"></i>
+        <i class="fas fa-paw paw2"></i>
+        <i class="fas fa-paw paw3"></i>
+        <i class="fas fa-paw paw4"></i>
+        <i class="fas fa-paw paw5"></i>
+        <i class="fas fa-paw paw6"></i>
+        <i class="fas fa-paw paw7"></i>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section id="services" class="section_2 container">
+      <h2 class="services title">SERVICES</h2>
+      <div class="services__container">
+        <div class="service service_1">
+          <img src="https://github.com/r-e-d-ant/DOG-guard-website/blob/main/assets/images/ser_dog_1.png?raw=true" alt="dog reading a book">
+          <div class="service_description">
+            <h3 class="service_title">Teaching</h3>
+            <p>We teach dogs to Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, neque. Eaque optio impedit quia porro.</p>
+          </div>
+        </div>
+        <div class="service service_2">
+          <img src="https://github.com/r-e-d-ant/DOG-guard-website/blob/main/assets/images/ser_dog_2.png?raw=true" alt="dog playing">
+          <div class="service_description">
+            <h3 class="service_title">Training</h3>
+            <p>We train dogs to Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, neque. Eaque optio impedit quia porro.</p>
+          </div>
+        </div>
+        <div class="service service_3">
+          <img src="https://github.com/r-e-d-ant/DOG-guard-website/blob/main/assets/images/ser_dog_3.png?raw=true" alt="dog washing">
+          <div class="service_description">
+            <h3 class="service_title">Cleanliness</h3>
+            <p>We assure cleanliness Lorem ipsum dolor sit, consectetur adipisicing elit. Consectetur, neque. Eaque optio impedit quia porro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section id="about" class="section_3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill-opacity=".5" d="M0,160L48,160C96,160,192,160,288,133.3C384,107,480,53,576,26.7C672,0,768,0,864,48C960,96,1056,192,1152,202.7C1248,213,1344,139,1392,101.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+      <div class="about_us_container">
+        <h2 class="about_us title">ABOUT US</h2>
+        <p class="text about">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias reiciendis adipisci, voluptas eum inventore provident perferendis, molestiae quos consectetur aut iure ipsa. Dolor similique eius corporis vitae, adipisci animi ea voluptates cum suscipit, qui quas atque beatae, earum praesentium accusantium sunt ipsa soluta? Quibusdam consectetur dolore reprehenderit vero eum minus.
+        </p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill-opacity=".5" d="M0,160L48,160C96,160,192,160,288,133.3C384,107,480,53,576,26.7C672,0,768,0,864,48C960,96,1056,192,1152,202.7C1248,213,1344,139,1392,101.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section id="testimonials" class="section_4 container">
+      <h2 class="testimony_title title">TESTIMONIALS</h2>
+      <div class="testimonials">
+        <div class="testimony testimony_1">
+          <div class="tester">
+            <div class="tester_profile"></div>
+            <h3 class="tester_name title">John Doe</h3>
+          </div>
+          <p>
+            Dolor similique eius corporis vitae, adipisci animi ea voluptates cum suscipit, qui quas atque beatae, earum praesentium accusantium sunt ipsa soluta.
+          </p>
+        </div>
+        <!-- - -->
+        <div class="testimony testimony_2">
+          <div class="tester">
+            <div class="tester_profile"></div>
+            <h3 class="tester_name title">Turray Mouse</h3>
+          </div>
+          <p>
+            Dolor similique eius corporis vitae, adipisci animi ea voluptates cum suscipit, qui quas atque beatae, earum praesentium accusantium sunt ipsa soluta.
+          </p>
+        </div>
+        <!-- - -->
+        <div class="testimony testimony_3">
+          <div class="tester">
+            <div class="tester_profile"></div>
+            <h3 class="tester_name title">Thierry Mugisha</h3>
+          </div>
+          <p>
+            Dolor similique eius corporis vitae, adipisci animi ea voluptates cum suscipit, qui quas atque beatae, earum praesentium accusantium sunt ipsa soluta.
+          </p>
+        </div>
+        <!-- - -->
+        <div class="testimony testimony_4">
+          <div class="tester">
+            <div class="tester_profile"></div>
+            <h3 class="tester_name title">Tito Muto</h3>
+          </div>
+          <p>
+            Dolor similique eius corporis vitae, adipisci animi ea voluptates cum suscipit, qui quas atque beatae, earum praesentium accusantium sunt ipsa soluta.
+          </p>
+        </div>
+        <!-- - -->
+      </div>
+      <div class="bones">
+        <i class="fas fa-bone bone1"></i>
+        <i class="fas fa-bone bone2"></i>
+        <i class="fas fa-bone bone_c"></i>
+        <i class="fas fa-bone bone3"></i>
+        <i class="fas fa-bone bone4"></i>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <footer>
+      <div class="top__footer container">
+        <div class="footer__container following">
+          <h2 class="title footer__title">FOLLOW US</h2>
+          <div class="sub_footer_container social_media_links">
+            <i class="bx bxl-facebook-square"></i>
+            <i class="bx bxl-instagram"></i>
+            <i class="bx bxl-twitter"></i>
+          </div>
+        </div>
+
+        <div class="footer__container address">
+          <h2 class="title footer__title">ADDRESS</h2>
+          <div class="sub_footer_container address_credentials">
+            <h3 class="place">monitor lake, st18</h3>
+            <h3 class="email">dogcenter@domain.com</h3>
+            <h3 class="tel">+002 202020202020</h3>
+          </div>
+        </div>
+
+        <div class="footer__container services_footer">
+          <h2 class="title footer__title">SERVICES</h2>
+          <div class="sub_footer_container services_lists">
+            <h3>Dog teaching</h3>
+            <h3>Dog training</h3>
+            <h3>Dog cleanliness</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="end__footer container">
+        <div class="copyright">
+          <span>copyright © 2021, DOG GUARD CENTER</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+<script src="/static/test.js"></script>
 </body>
 </html>
