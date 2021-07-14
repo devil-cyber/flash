@@ -7,6 +7,7 @@ from .route import Route
 from .responses import Response
 from .util import empty_wsgi_app
 from .error_handlers import debug_exception_handler
+from .templates import get_templates_env
 
 
 class Flash:
@@ -16,6 +17,7 @@ class Flash:
         self._debug = debug
         self._routes = {}
         self._exception_handler = None
+        self.templates = get_templates_env(os.path.abspath(template_dir))
 
         # Cached request session
         self._session = None
@@ -48,3 +50,8 @@ class Flash:
             if self._debug is False:
                 raise exception
             debug_exception_handler(request, response, exception)
+    def template(self,name,context=None):
+        if context is None:
+            context = {}
+        return self.templates.get_template(name).render(**context)
+
