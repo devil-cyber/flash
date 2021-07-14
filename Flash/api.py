@@ -77,4 +77,9 @@ class Flash:
             session.mount(base_url,RequestsWSGIAdapter(self))
             self._session = session
         return self._session
+    def as_whitenoise_app(self,environ,start_response):
+        white_noise = WhiteNoise(empty_wsgi_app(),root = self.static_dir)
+        return white_noise(environ,start_response)
+
+
 
