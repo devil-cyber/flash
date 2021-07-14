@@ -6,7 +6,7 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = "flash-web-framework"
+NAME = "flash-webframework"
 DESCRIPTION = "Python Web Framework built for learning and fun."
 URL = "https://github.com/devil-cyber/flash"
 EMAIL = "mani2474695@gmail.com"
