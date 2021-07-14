@@ -5,7 +5,7 @@
 > Flash is a Python based web framework that has been created to 
 learn how web framework work under the hood
 
-## Quick Start
+## Get Started:)
 
 Install it:
 
@@ -134,7 +134,7 @@ Then you can use HTML files in that folder like so in a handler:
 ```python
 @app.route("/show/template")
 def handler_with_template(req, resp):
-    resp.html = app.template("example.html", context={"title": "Awesome Framework", "body": "welcome to the future!"})
+    resp.html = app.template("test.html", context={"title": "Awesome Python Framework", "body": "welcome to new framework"})
 ```
 
 ## Static Files
@@ -155,7 +155,7 @@ Then you can use the files inside this folder in HTML files:
   <meta charset="UTF-8">
   <title>{{title}}</title>
 
-  <link href="/static/main.css" rel="stylesheet" type="text/css">
+  <link href="/static/test.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
