@@ -10,7 +10,7 @@ learn how web framework work under the hood
 Install it:
 
 ```bash
-pip install flash-webframework
+pip install flash-framework
 ```
 
 Basic Usage:
